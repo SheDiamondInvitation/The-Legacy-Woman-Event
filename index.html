@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>SHEDIAMOND LAGOS WOMEN GROWTH HANGOUT Invitation</title>
+
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="apple-touch-icon" href="favicon-apple.png" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body {
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+    overflow-y:hidden;
+  }
+
+  section {
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    padding:2rem 1rem;
+    overflow:hidden;
+  }
+
+  .hero {
+    background:url('back.png') center center no-repeat;
+    background-size:cover;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero::before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+  }
+
+  .hero-box {
+    position: relative;
+    background: rgba(10,10,20,0.7);
+    padding:4rem;
+    border-radius:16px;
+    box-shadow:0 0 25px rgba(255,255,0,0.4);
+    backdrop-filter: blur(10px);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 500px;
+    width:95%;
+    opacity:0;
+    transform:translateY(20px);
+    transition: all 0.8s ease;
+  }
+
+  .hero-box.active {
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .hero-box h1, .hero-box h2 {
+    color:white;
+    margin-bottom:0.5rem;
+  }
+
+  #countdown {
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:0.5rem;
+  }
+
+  .count-unit {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:3em;
+  }
+
+  .count-unit .number {
+    display:block;
+    height:2em;
+    line-height:2em;
+    text-align:center;
+    color:white;
+    animation: heartbeat 2s infinite;
+  }
+
+  .unit-label {
+    font-size:0.7rem;
+    color:white;
+    margin-top:4px;
+    text-shadow:0 0 6px rgba(255,255,255,0.7);
+    animation:none !important;
+  }
+
+  #toGo {
+    display:block;
+    font-size:1rem;
+    color:white;
+    margin-top:8px;
+    text-shadow:0 0 8px rgba(255,255,255,0.9);
+  }
+
+  @keyframes heartbeat {
+    0%,100%{transform:scale(1);}
+    25%,75%{transform:scale(1.08);}
+    50%{transform:scale(1);}
+  }
+
+  .hero-box input {
+    margin-top:1rem;
+    padding:12px;
+    font-size:1rem;
+    border-radius:8px;
+    border:none;
+    width:100%;
+    outline:none;
+  }
+
+  .hero-box button {
+    margin-top:1rem;
+    padding:12px 20px;
+    background:#d63384;
+    color:white;
+    font-weight:bold;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  }
+
+  .loader {
+    display:none;
+    margin-top:1rem;
+    border:4px solid #f3f3f3;
+    border-top:4px solid #d63384;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+  }
+
+  #openingLogo {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.5);
+    width:200px;
+    height:200px;
+    z-index:1500;
+    animation: logoZoom 3.3s ease forwards;
+  }
+
+  @keyframes logoZoom {
+    0%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
+    50%{opacity:1; transform:translate(-50%,-50%) scale(1.05);}
+    100%{opacity:0; transform:translate(-50%,-50%) scale(1);}
+  }
+
+  .twinkle {
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    opacity:0.8;
+    animation: twinkleAnim 2s infinite;
+  }
+
+  @keyframes twinkleAnim {
+    0%,100%{opacity:0.8;}
+    50%{opacity:0;}
+  }
+
+  #heroContent {
+    transition: all 0.5s ease;
+  }
+
+  #heroContent.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+</style>
+</head>
+
+<body>
+
+<img src="logo.png" id="openingLogo" alt="SheDiamond Logo" />
+
+<div id="mainContent" style="display:none;">
+
+<section class="hero" id="home">
+  <div class="hero-box" id="heroBox">
+
+    <div id="heroContent">
+      <h2>Lagos Women Growth Hangout Invitation Checker</h2>
+
+      <div id="countdown"></div>
+      <span id="toGo">TO GO!</span>
+
+      <input type="tel" id="phoneInput" placeholder="Enter Phone Number" />
+      <button onclick="checkInvite()">Check</button>
+      <div class="loader" id="loader"></div>
+    </div>
+
+    <div id="twinkles"></div>
+
+  </div>
+</section>
+
+</div>
+
+<script>
+setTimeout(()=>{
+  document.getElementById('openingLogo').style.display='none';
+  const main=document.getElementById('mainContent');
+  main.style.display='block';
+
+  const heroBox=document.getElementById('heroBox');
+  if(heroBox) setTimeout(()=>heroBox.classList.add('active'),200);
+},3300);
+
+// countdown
+const countdownEl=document.getElementById('countdown');
+const eventDate=new Date("June 25, 2026 11:30:00").getTime();
+const units=['Days','Hours','Minutes','Seconds'];
+const spans={};
+
+units.forEach(u=>{
+  const div=document.createElement('div');
+  div.className='count-unit';
+
+  const span=document.createElement('span');
+  span.className='number';
+  span.innerText='0';
+  div.appendChild(span);
+
+  const label=document.createElement('span');
+  label.className='unit-label';
+  label.innerText=u;
+  div.appendChild(label);
+
+  countdownEl.appendChild(div);
+  spans[u]=span;
+});
+
+function updateCountdown(){
+  const now=new Date().getTime();
+  let diff=eventDate-now; if(diff<0) diff=0;
+
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m=Math.floor((diff%(1000*60*60))/(1000*60));
+  const s=Math.floor((diff%(1000*60))/1000);
+
+  const values=[d,h,m,s];
+
+  units.forEach((unit,i)=>{
+    const span=spans[unit];
+    span.innerText=values[i];
+  });
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// twinkles
+const twinkleContainer=document.getElementById('twinkles');
+for(let i=0;i<30;i++){
+  const t=document.createElement('div');
+  t.classList.add('twinkle');
+  t.style.left=Math.random()*100+'%';
+  t.style.top=Math.random()*100+'%';
+  twinkleContainer.appendChild(t);
+}
+
+// ✅ MAIN FUNCTION
+async function checkInvite(){
+  const phone=document.getElementById("phoneInput").value.trim();
+  const loader=document.getElementById("loader");
+  const heroBox=document.getElementById("heroBox");
+  const heroContent=document.getElementById("heroContent");
+
+  if(phone.length!==11){
+    alert("Enter a valid 11-digit number");
+    return;
+  }
+
+  loader.style.display="block";
+
+  const data=await fetch("list.json?"+Date.now())
+  .then(r=>r.json())
+  .catch(()=>{
+    loader.style.display="none";
+    alert("Error loading list");
+    return null;
+  });
+
+  loader.style.display="none";
+
+  if(data && data[phone]){
+    const rec=data[phone];
+
+    heroContent.classList.add("hide");
+
+    setTimeout(()=>{
+      heroBox.innerHTML=`
+        <h3 style="color:rgba(255,255,255,0.95); font-weight:700;">
+          Congratulations ${rec.name}!
+        </h3>
+
+        <p style="color:rgba(255,255,255,0.85);">
+          You’ve been selected to attend
+        </p>
+
+        <p style="color:rgba(255,255,255,0.95);">
+          <strong>The SheDiamond Lagos Women Growth Hangout</strong>
+        </p>
+
+        <p style="color:rgba(255,255,255,0.85);">
+          Your ACCESS CODE:
+          <strong style="color:rgba(255,255,255,0.95);">${rec.reservation}</strong>
+        </p>
+
+        <p style="color:rgba(255,255,255,0.75);">
+          <strong>Date:</strong> Thursday, 25th June, 2026
+        </p>
+
+        <p style="color:rgba(255,255,255,0.75);">
+          <strong>Venue:</strong> 2nd Floor, 91 Obafemi Awolowo Way, Ikeja, Lagos.
+        </p>
+
+        <p style="color:rgba(255,255,255,0.8); margin-top:10px;">
+          Kindly take a screenshot of this invitation.
+        </p>
+
+        <button onclick="goBack()" style="
+          margin-top:1rem;
+          padding:12px 20px;
+          background:#d63384;
+          color:white;
+          font-weight:bold;
+          border:none;
+          border-radius:8px;
+          cursor:pointer;
+          width:100%;
+        ">
+          ← Back
+        </button>
+      `;
+    },300);
+
+  } else {
+    heroContent.classList.add("hide");
+
+    setTimeout(()=>{
+      heroBox.innerHTML=`
+        <h3 style="color:white;">😔 Invitation Not Found</h3>
+        <p style="color:rgba(255,255,255,0.8);">Please contact your group admin.</p>
+
+        <button onclick="goBack()" style="
+          margin-top:1rem;
+          padding:12px 20px;
+          background:#d63384;
+          color:white;
+          font-weight:bold;
+          border:none;
+          border-radius:8px;
+          cursor:pointer;
+          width:100%;
+        ">
+          ← Back
+        </button>
+      `;
+    },300);
+  }
+}
+
+// ✅ BACK FUNCTION (OUTSIDE)
+function goBack(){
+  const heroBox=document.getElementById("heroBox");
+
+  heroBox.innerHTML=`
+    <div id="heroContent">
+      <h2>SheDiamond LAGOS WOMEN GROWTH HANGOUT Invitation Checker</h2>
+
+      <div id="countdown"></div>
+      <span id="toGo">TO GO!</span>
+
+      <input type="tel" id="phoneInput" placeholder="Enter Phone Number" />
+      <button onclick="checkInvite()">Check</button>
+      <div class="loader" id="loader"></div>
+    </div>
+  `;
+
+  rebuildCountdown();
+  reconnectCountdown();
+  updateCountdown();
+}
+
+// ✅ REBUILD COUNTDOWN
+function rebuildCountdown(){
+  const countdownEl=document.getElementById('countdown');
+  countdownEl.innerHTML='';
+
+  units.forEach(u=>{
+    const div=document.createElement('div');
+    div.className='count-unit';
+
+    const span=document.createElement('span');
+    span.className='number';
+    span.innerText='0';
+    div.appendChild(span);
+
+    const label=document.createElement('span');
+    label.className='unit-label';
+    label.innerText=u;
+    div.appendChild(label);
+
+    countdownEl.appendChild(div);
+  });
+}
+
+ function reconnectCountdown(){
+  const units = ['Days','Hours','Minutes','Seconds'];
+  const elements = document.querySelectorAll('#countdown .number');
+
+  units.forEach((unit, i) => {
+    spans[unit] = elements[i];
+  });
+}
+</script>
+
+</body>
+</html>
