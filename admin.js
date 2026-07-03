@@ -21,7 +21,7 @@ const adminPanel = document.getElementById("adminPanel");
 
 // ======= Repo Details =======
 const repoOwner = "SheDiamondInvitation";
-const repoName = "Lagos-Elite-TEA-HANGOUT";
+const repoName = "The-Legacy-Woman-Event";
 const filePath = "list.json";
 
 // ======= Login Step =======
