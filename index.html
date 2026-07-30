@@ -14,6 +14,17 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
 
+ :root{
+
+    --card-width:280px;
+
+    --ticket-width:165px;
+
+    --ticket-overlap:48px;
+
+    --popup-height:460px;
+
+}
   html, body {
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
@@ -230,15 +241,21 @@
     background:transparent;
 
     overflow:visible;
+    
+    display:flex;
+    
+    justify-content:center;
+    
+    align-items:center;
 }
 
 .white-card{
 
     position:relative;
 
-    width:270px;
+    width:min(var(--card-width), 64vw);
 
-    min-height:470px;
+    height:min(var(--popup-height), 82vh);
 
     background:#fff;
 
@@ -246,13 +263,14 @@
 
     padding:26px;
 
+    padding-right:110px;
+
     box-sizing:border-box;
 
-    padding-right:95px;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
 
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.18);
-
+    overflow:hidden;
+ 
 }
 
 .ticket-panel{
@@ -261,15 +279,17 @@
 
     top:0;
 
-    right:-70px;
+    right:calc(-1 * var(--ticket-overlap));
 
-    width:165px;
+    width:min(var(--ticket-width), 38vw);
 
     height:100%;
 
     z-index:20;
 
     pointer-events:none;
+
+    overflow:hidden;
 
 }
 
