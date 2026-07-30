@@ -1,4 +1,3 @@
-<!-- Popup review copy. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +13,6 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
 
- :root{
-
-    --card-width:270px;
-
-    --ticket-width:145px;
-
-    --ticket-overlap:40px;
-
-    --popup-height:450px;
-
-}
   html, body {
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
@@ -60,41 +48,22 @@
     background:rgba(0,0,0,0.3);
   }
 
-.hero-box {
-
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    opacity:0;
-
-    transform:translateY(20px);
-
-    transition:all .8s ease;
-
-}
-
- .countdown-card{
-
-    background:rgba(10,10,20,.7);
-
+  .hero-box {
+    position: relative;
+    background: rgba(10,10,20,0.7);
     padding:4rem;
-
     border-radius:16px;
-
-    box-shadow:0 0 25px rgba(255,255,0,.4);
-
-    backdrop-filter:blur(10px);
-
-    max-width:500px;
-
+    box-shadow:0 0 25px rgba(255,255,0,0.4);
+    backdrop-filter: blur(10px);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 500px;
     width:95%;
-
-}
+    opacity:0;
+    transform:translateY(20px);
+    transition: all 0.8s ease;
+  }
 
   .hero-box.active {
     opacity:1;
@@ -231,276 +200,6 @@
     pointer-events: none;
   }
 
-/*==============================
-      NEW INVITATION POPUP
-===============================*/
-
-:root{
-
-    --popup-width:360px;
-    --popup-height:500px;
-
-    --card-width:238px;
-
-    --ticket-width:150px;
-
-    --popup-radius:28px;
-
-}
-
-.invite-popup{
-    position:relative;
-
-    display:inline-block;
-
-    margin:auto;
-
-    animation:popupIn .45s ease;
-
-    background:transparent;
-
-    overflow:visible;
-    
-    display:flex;
-    
-    justify-content:center;
-    
-    align-items:center;
-}
-
-.white-card{
-
-    position:relative;
-
-    width:var(--card-width);
-
-    height:var(--popup-height);
-
-    background:#fff;
-
-    border-radius:30px;
-
-    padding:24px;
-
-    padding-right:90px;
-
-    box-sizing:border-box;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
-
-    overflow:hidden;
-
-}
-
-.ticket-panel{
-
-    position:absolute;
-
-    top:0;
-
-    right:calc(-1 * var(--ticket-overlap));
-
-    width:var(--ticket-width);
-
-    height:100%;
-
-    overflow:hidden;
-
-    z-index:20;
-
-    pointer-events:none;
-
-}
-.popup-ticket{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:fill;
-
-    display:block;
-
-}
-
-@media(max-width:768px){
-
-    :root{
-
-        --popup-width:375px;
-
-        --popup-height:500px;
-
-        --card-width:225px;
-
-        --ticket-width:150px;
-
-    }
-
-}
-
- /* =====================================
-   DETAILS SECTION
-===================================== */
-
-.details-section{
-
-    border-top:1px solid #EFEFEF;
-
-    border-bottom:1px solid #EFEFEF;
-
-    padding:14px 0;
-
-    margin-top:10px;
-
-    margin-bottom:10px;
-
-}
-
-.info-row{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-    margin-bottom:12px;
-
-}
-
-.info-row:last-child{
-
-    margin-bottom:0;
-
-}
-
-.info-row img{
-
-    width:18px;
-
-    height:18px;
-
-    flex-shrink:0;
-
-    margin-top:2px;
-
-}
-
-.info-row span{
-
-    color:#555;
-
-    font-size:13px;
-
-    line-height:1.45;
-
-}
-
-/* =====================================
-   BUTTON OVERRIDE
-===================================== */
-
-.white-card .done-btn{
-    width:58%;
-    align-self:center;
-
-    margin-top:auto !important;
-
-    background:linear-gradient(
-        135deg,
-        #F9D978,
-        #D8A13A,
-        #B97C13
-    ) !important;
-
-    color:#fff !important;
-
-    border:none !important;
-
-    padding:14px 18px;
-
-    border-radius:40px;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 25px rgba(184,124,19,.25);
-
-}
-
-.white-card .done-btn:hover{
-
-    transform:translateY(-2px);
-
-}
-
-/* =====================================
-   HERO OVERRIDE
-===================================== */
-
-.hero-box.show-popup{
-
-    position:fixed;
-
-    inset:0;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.15);
-
-    backdrop-filter:blur(8px);
-
-    padding:20px;
-
-    z-index:9999;
-
-}
-/* =====================================
-   MOBILE
-===================================== */
-
-@media(max-width:768px){
-
-    .details-section{
-
-        padding:8px 0;
-
-    }
-
-    .info-row{
-
-        gap:6px;
-
-        margin-bottom:8px;
-
-    }
-
-    .info-row img{
-
-        width:14px;
-
-        height:14px;
-
-    }
-
-    .info-row span{
-
-        font-size:10px;
-
-        line-height:1.25;
-
-    }
-
-}
- 
 </style>
 </head>
 
@@ -624,142 +323,49 @@ async function checkInvite(){
     heroContent.classList.add("hide");
 
     setTimeout(()=>{
-     heroBox.classList.add("show-popup");
       heroBox.innerHTML=`
-        <div class="invite-popup">
+        <h3 style="color:rgba(255,255,255,0.95); font-weight:700;">
+          Congratulations ${rec.name}!
+        </h3>
 
-    <div class="ticket-panel">
-        <img
-            src="ticket-preview.png"
-            class="popup-ticket"
-            alt="Invitation Ticket">
-    </div>
+        <p style="color:rgba(255,255,255,0.85);">
+          You’ve been selected to attend
+        </p>
 
-    <div class="white-card">
+        <p style="color:rgba(255,255,255,0.95);">
+          <strong>The SheDiamond Legacy Woman Event</strong>
+        </p>
 
-        <!-- Header -->
+        <p style="color:rgba(255,255,255,0.85);">
+          Your ACCESS CODE:
+          <strong style="color:rgba(255,255,255,0.95);">${rec.reservation}</strong>
+        </p>
 
-        <div class="popup-header">
+        <p style="color:rgba(255,255,255,0.75);">
+          <strong>Date:</strong> Thur. 23rd July, 2026 | <strong>Time:</strong> 11:30AM
+        </p>
 
-            <div class="celebrate-icon">🎉</div>
+        <p style="color:rgba(255,255,255,0.75);">
+          <strong>Venue:</strong> 2nd Floor, No. 91 Obafemi Awolowo Way, Opp. Baffi Furniture, Balogun Bus-Stop, Ikeja.
+        </p>
 
-            <div>
+        <p style="color:rgba(255,255,255,0.8); margin-top:10px;">
+          KINDLY TAKE A SCREENSHOT OF THIS INVITATION.
+        </p>
 
-                <div class="popup-title">
-                    Congratulations!
-                </div>
-
-                <div class="popup-subtitle">
-                    Your seat is reserved.
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- Gold Divider -->
-
-        <div class="gold-divider">
-
-            <span>◇</span>
-
-        </div>
-
-        <!-- Name -->
-
-        <div class="field-label">
-
-            NAME
-
-        </div>
-
-        <div class="popup-name">
-
-            ${rec.name}
-
-        </div>
-
-        <!-- Reservation -->
-
-        <div class="field-label">
-
-            RESERVATION CODE
-
-        </div>
-
-        <div class="reservation-box">
-
-            ${rec.reservation}
-
-        </div>
-
-        <!-- Details -->
-
-        <div class="details-section">
-
-            <div class="info-row">
-
-                <img src="icons/calendar.svg">
-
-                <span>Saturday, 1st August 2026</span>
-
-            </div>
-
-            <div class="info-row">
-
-                <img src="icons/clock.svg">
-
-                <span>8:30 AM – 12:00 Noon</span>
-
-            </div>
-
-            <div class="info-row">
-
-                <img src="icons/location.svg">
-
-                <span>
-
-                    McGovern Hall,<br>
-
-                    St. Agnes Catholic Church,<br>
-
-                    Maryland Bus Stop,<br>
-
-                    Ikeja, Lagos.
-
-                </span>
-
-            </div>
-
-        </div>
-
-        <!-- Reminder -->
-
-        <div class="reminder-box">
-
-            <img src="icons/shield.svg">
-
-            <div>
-
-                <strong>Please screenshot this invitation.</strong><br>
-
-                Show this pass at the registration desk.
-
-            </div>
-
-        </div>
-
-        <button class="done-btn"
-
-                onclick="goBack()">
-
-            Done
-
+        <button onclick="goBack()" style="
+          margin-top:1rem;
+          padding:12px 20px;
+          background:#d63384;
+          color:white;
+          font-weight:bold;
+          border:none;
+          border-radius:8px;
+          cursor:pointer;
+          width:100%;
+        ">
+          ← Back
         </button>
-
-    </div>
-
-</div>
       `;
     },300);
 
