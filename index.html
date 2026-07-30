@@ -219,49 +219,39 @@
 }
 
 .invite-popup{
-
     position:relative;
 
-    width:min(92vw,var(--popup-width));
-
-    height:var(--popup-height);
-
-    overflow:hidden;
-
-    border-radius:var(--popup-radius);
+    display:inline-block;
 
     margin:auto;
 
     animation:popupIn .45s ease;
 
+    background:transparent;
+
+    overflow:visible;
 }
 
 .white-card{
 
-    position:absolute;
+    position:relative;
 
-    left:0;
-    top:0;
+    width:270px;
 
-    width:var(--card-width);
-
-    height:100%;
+    min-height:470px;
 
     background:#fff;
 
-    border-radius:var(--popup-radius);
+    border-radius:30px;
 
-    padding:24px;
+    padding:26px;
 
     box-sizing:border-box;
 
-    display:flex;
+    padding-right:95px;
 
-    flex-direction:column;
-
-    z-index:2;
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.18);
 
 }
 
@@ -271,25 +261,19 @@
 
     top:0;
 
-    right:-38px;
+    right:-70px;
 
-    width:var(--ticket-width);
+    width:165px;
 
     height:100%;
 
-    overflow:hidden;
-
-    z-index:5;
+    z-index:20;
 
     pointer-events:none;
 
 }
 
 .popup-ticket{
-
-    position:absolute;
-
-    inset:0;
 
     width:100%;
 
@@ -432,9 +416,11 @@
 
     align-items:center;
 
-    padding:18px;
+    padding:24px;
 
-    box-sizing:border-box;
+    backdrop-filter:blur(10px);
+
+    background:rgba(0,0,0,.18);
 
 }
 
