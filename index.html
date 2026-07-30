@@ -205,17 +205,29 @@
 =========================== */
 
 .invite-popup{
-    width:min(820px,92vw);
-    max-height:88vh;
-    background:#ffffff;
-    border-radius:30px;
+
+    width:min(860px,94vw);
+
+    min-height:430px;
+
+    max-height:78vh;
+
+    background:#fff;
+
+    border-radius:26px;
+
     display:flex;
-    overflow:hidden;
+
+    overflow:visible;
+
     box-shadow:
-        0 30px 80px rgba(0,0,0,.28),
-        0 10px 30px rgba(0,0,0,.15);
+        0 24px 70px rgba(0,0,0,.25),
+        0 10px 25px rgba(0,0,0,.12);
+
     backdrop-filter:blur(20px);
+
     animation:popupIn .45s ease;
+
 }
 
 .popup-left{
@@ -408,6 +420,117 @@
     overflow:visible;
     box-shadow:none;
     backdrop-filter:none;
+}
+ /* ===========================
+   PHONE OPTIMIZATION
+=========================== */
+
+@media (max-width:768px){
+
+    .invite-popup{
+
+        width:95vw;
+
+        max-height:72vh;
+
+        border-radius:22px;
+
+    }
+
+    .popup-left{
+
+        width:65%;
+
+        padding:18px;
+
+    }
+
+    .popup-right{
+
+        width:35%;
+
+    }
+
+    .popup-title{
+
+        font-size:16px;
+
+    }
+
+    .popup-name{
+
+        font-size:15px;
+
+        margin-bottom:14px;
+
+    }
+
+    .access-card{
+
+        padding:10px;
+
+        margin-bottom:14px;
+
+    }
+
+    .access-code{
+
+        font-size:18px;
+
+        letter-spacing:4px;
+
+    }
+
+    .info-row{
+
+        gap:8px;
+
+        margin-bottom:10px;
+
+    }
+
+    .info-row img{
+
+        width:16px;
+
+        height:16px;
+
+    }
+
+    .info-row span{
+
+        font-size:11px;
+
+        line-height:1.35;
+
+    }
+
+    .screenshot-note{
+
+        padding:10px;
+
+        font-size:10px;
+
+        margin-top:12px;
+
+    }
+
+    .done-btn{
+
+        margin-top:14px;
+
+        padding:10px;
+
+        font-size:13px;
+
+    }
+
+    .popup-ticket{
+
+        height:92%;
+
+    }
+
 }
  
 </style>
