@@ -200,6 +200,58 @@
     pointer-events: none;
   }
 
+/* ===========================
+   IOS INVITATION POPUP
+=========================== */
+
+.invite-popup{
+    width:min(920px,95vw);
+    background:#ffffff;
+    border-radius:30px;
+    display:flex;
+    overflow:hidden;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.28),
+        0 10px 30px rgba(0,0,0,.15);
+    backdrop-filter:blur(20px);
+    animation:popupIn .45s ease;
+}
+
+.popup-left{
+    width:65%;
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.popup-right{
+    width:35%;
+    overflow:hidden;
+    position:relative;
+}
+
+.popup-ticket{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+@keyframes popupIn{
+
+    from{
+        opacity:0;
+        transform:translateY(35px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+ 
 </style>
 </head>
 
