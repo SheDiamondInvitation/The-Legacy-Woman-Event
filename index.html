@@ -208,13 +208,18 @@
 
     position:relative;
 
-    width:100%;
+    width:min(92vw,360px);
 
-    height:100%;
+    height:530px;
 
     margin:auto;
 
-    animation:popupIn .45s ease;
+    border-radius:30px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
 }
 
 /* ===========================
@@ -225,15 +230,17 @@
 
     position:absolute;
 
-    right:0;
-
     top:0;
 
-    width:35%;
+    right:0;
+
+    width:145px;
 
     height:100%;
 
     z-index:5;
+
+    pointer-events:none;
 
 }
 
@@ -247,7 +254,7 @@
 
     display:block;
 
-    object-fit:contain;
+    object-fit:cover;
 
 }
 /* ===========================
@@ -262,7 +269,7 @@
 
     top:0;
 
-    width:65%;
+    width:235px;
 
     height:100%;
 
@@ -270,16 +277,17 @@
 
     border-radius:30px;
 
-    padding:34px;
+    padding:26px;
 
     display:flex;
 
     flex-direction:column;
 
-    z-index:2;
+    z-index:1;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
 
 }
-
 .ticket-cut{
 
     position:absolute;
