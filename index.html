@@ -206,16 +206,10 @@
 
 .invite-popup{
 
-    --popup-width:360px;
-    --popup-height:500px;
-
-    --card-width:225px;
-    --ticket-width:150px;
-
     position:relative;
 
-    width:var(--popup-width);
-    height:var(--popup-height);
+    width:min(92vw,360px);
+    height:500px;
 
     margin:auto;
 
@@ -223,6 +217,7 @@
 
     border-radius:30px;
 
+    animation:popupIn .45s ease;
 }
 
 /* ===========================
@@ -234,9 +229,9 @@
     position:absolute;
 
     top:0;
-    right:0;
+    right:-20px;
 
-    width:var(--ticket-width);
+    width:145px;
     height:100%;
 
     z-index:10;
@@ -268,7 +263,7 @@
     top:0;
     left:0;
 
-    width:var(--card-width);
+    width:220px;
     height:100%;
 
     background:#fff;
@@ -279,42 +274,11 @@
 
     box-sizing:border-box;
 
-    z-index:1;
-
     display:flex;
     flex-direction:column;
 
-}
-.ticket-cut{
-
-    position:absolute;
-
-    right:-22px;
-
-    width:44px;
-
-    height:44px;
-
-    background:transparent;
-
-    border-radius:50%;
-
-    box-shadow:22px 0 0 #ffffff;
-
-    z-index:20;
-
-}
-
-.ticket-cut.top{
-
-    top:22px;
-
-}
-
-.ticket-cut.bottom{
-
-    bottom:22px;
-
+    z-index:2;
+ 
 }
  
 /* ================= MOBILE ================= */
