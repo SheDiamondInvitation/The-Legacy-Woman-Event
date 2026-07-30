@@ -199,9 +199,10 @@
     transform: translateY(-10px);
     pointer-events: none;
   }
-/* ==========================
-   INVITATION POPUP
-========================== */
+
+ /*==================================================
+INVITATION POPUP
+==================================================*/
 
 #inviteOverlay{
 
@@ -213,10 +214,9 @@ left:0;
 width:100%;
 height:100%;
 
-display:none;
+display:flex;
 
 justify-content:center;
-
 align-items:center;
 
 background:rgba(0,0,0,.45);
@@ -225,11 +225,23 @@ backdrop-filter:blur(14px);
 
 z-index:9999;
 
+opacity:1;
+
+transition:.45s ease;
+
 }
 
- .inviteCard{
+#inviteOverlay.show{
 
-width:430px;
+display:flex;
+
+opacity:1;
+
+}
+
+.inviteCard{
+
+width:min(440px,92vw);
 
 height:75vh;
 
@@ -239,46 +251,65 @@ border-radius:34px;
 
 overflow:hidden;
 
+box-shadow:
+0 40px 100px rgba(0,0,0,.35);
+
 display:flex;
 
 flex-direction:column;
 
-box-shadow:
-0 30px 80px rgba(0,0,0,.35);
+transform:
+translateY(20px)
+scale(.88);
+
+transition:
+all .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+#inviteOverlay.show .inviteCard{
+
+transform:
+translateY(0)
+scale(1);
 
 }
 
  .inviteHeader{
 
-height:32%;
+height:34%;
 
 overflow:hidden;
 
+background:#000;
+
 }
 
- .inviteBanner{
+.inviteBanner{
 
 width:100%;
 
 height:100%;
 
-object-fit:cover;
-
 display:block;
+
+object-fit:cover;
 
 }
 
  .inviteBody{
 
-height:68%;
+height:66%;
+
+background:#fff;
 
 padding:28px;
 
 overflow-y:auto;
 
-background:#fff;
-
 }
+
+ 
 </style>
 </head>
 
@@ -286,7 +317,7 @@ background:#fff;
 
 <img src="logo.png" id="openingLogo" alt="SheDiamond Logo" />
 
-<div id="mainContent" style="display:flex;;">
+<div id="mainContent" style="display:none;">
 
 <section class="hero" id="home">
   <div class="hero-box" id="heroBox">
@@ -309,6 +340,35 @@ background:#fff;
 
 </div>
 
+ <!-- ==========================================
+     INVITATION POPUP
+=========================================== -->
+
+<div id="inviteOverlay">
+
+    <div class="inviteCard">
+
+        <!-- TOP IMAGE -->
+
+        <div class="inviteHeader">
+
+            <img
+                src="ticket-banner.png"
+                class="inviteBanner"
+                alt="Ticket Banner">
+
+        </div>
+
+
+        <!-- WHITE CONTENT -->
+
+        <div class="inviteBody">
+
+        </div>
+
+    </div>
+
+</div>
 <script>
 setTimeout(()=>{
   document.getElementById('openingLogo').style.display='none';
@@ -528,24 +588,6 @@ function rebuildCountdown(){
   });
 }
 </script>
- 
-<!-- INVITATION POPUP -->
-<div id="inviteOverlay">
 
-    <div class="inviteCard">
-
-        <div class="inviteHeader">
-
-            <img src="ticket-banner.png" class="inviteBanner">
-
-        </div>
-
-        <div class="inviteBody">
-
-        </div>
-
-    </div>
-
-</div>
 </body>
 </html>
