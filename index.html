@@ -200,364 +200,27 @@
     pointer-events: none;
   }
 
-/* ===========================
-   IOS INVITATION POPUP
-=========================== */
-
-.invite-popup{
-
-    width:min(860px,94vw);
-
-    min-height:430px;
-
-    max-height:78vh;
-
-    background:#fff;
-
-    border-radius:26px;
-
-    display:flex;
-
-    overflow:visible;
-
-    box-shadow:
-        0 24px 70px rgba(0,0,0,.25),
-        0 10px 25px rgba(0,0,0,.12);
-
-    backdrop-filter:blur(20px);
-
-    animation:popupIn .45s ease;
-
-}
-
-.popup-left{
-    width:65%;
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-}
-
-.popup-right{
-
-    width:35%;
-    position:relative;
-
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-
-    overflow:visible;
-
-}
-
-.popup-ticket{
-
-    width:105%;
-    height:94%;
-
-    object-fit:cover;
-
-    border-top-left-radius:28px;
-    border-bottom-left-radius:28px;
-
-    margin-right:-14px;
-
-    box-shadow:
-        0 20px 40px rgba(0,0,0,.18);
-
-}
-
-@keyframes popupIn{
-
-    from{
-        opacity:0;
-        transform:translateY(35px) scale(.96);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
-}
- /* ===========================
-   POPUP CONTENT
-=========================== */
-
-.verify-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 16px;
-    border:1px solid rgba(215,166,43,.35);
-    border-radius:50px;
-    background:#fff9ec;
-    color:#b77a12;
-    font-size:13px;
-    font-weight:700;
-    margin-bottom:18px;
-    width:fit-content;
-}
-
-.verify-badge img{
-    width:22px;
-    height:22px;
-}
-
-.popup-title{
-    color:#111;
-    font-size:32px;
-    font-weight:700;
-    margin-bottom:6px;
-}
-
-.popup-name{
-    color:#333;
-    font-size:24px;
-    font-weight:600;
-    margin-bottom:28px;
-}
-
-.access-card{
-    background:#fff8e6;
-    border:1px solid rgba(215,166,43,.35);
-    border-radius:18px;
-    padding:18px;
-    margin-bottom:28px;
-}
-
-.access-label{
-    font-size:12px;
-    color:#888;
-    letter-spacing:2px;
-    font-weight:700;
-}
-
-.access-code{
-    margin-top:6px;
-    font-size:28px;
-    color:#b77a12;
-    font-weight:700;
-}
-
-.info-row{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    margin-bottom:18px;
-}
-
-.info-row img{
-    width:22px;
-    height:22px;
-    flex-shrink:0;
-    margin-top:2px;
-}
-
-.info-row span{
-    color:#444;
-    font-size:15px;
-    line-height:1.6;
-}
- /* ===========================
-   POPUP FOOTER
-=========================== */
-
-.screenshot-note{
-    margin-top:22px;
-    padding:14px 16px;
-    border-radius:14px;
-    background:#f8f8f8;
-    color:#666;
-    font-size:14px;
-    line-height:1.5;
-}
-
-.done-btn{
-    margin-top:28px !important;
-    width:100%;
-    border:none;
-    outline:none;
-    cursor:pointer;
-    padding:16px;
-    border-radius:50px;
-    font-size:16px;
-    font-weight:700;
-    color:white;
-    background:linear-gradient(
-        135deg,
-        #FFE8A2,
-        #D7A62B,
-        #B77A12
-    ) !important;
-}
-
-.done-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(183,122,18,.35);
-}
-
-.done-btn:active{
-    transform:scale(.98);
-}
-
-.popup-right{
-    background:#f4f4f4;
-}
-
-.popup-ticket{
-    border-top-left-radius:28px;
-    border-bottom-left-radius:28px;
-}
-
-.hero-box.show-popup{
-    background:transparent;
-    padding:0;
-    max-width:920px;
-    width:95vw;
-    border-radius:30px;
-    overflow:visible;
-    box-shadow:none;
-    backdrop-filter:none;
-}
- /* ===========================
-   PHONE OPTIMIZATION
-=========================== */
-
-@media (max-width:768px){
-
-    .invite-popup{
-
-        width:95vw;
-
-        max-height:72vh;
-
-        border-radius:22px;
-
-    }
-
-    .popup-left{
-
-        width:65%;
-
-        padding:18px;
-
-    }
-
-    .popup-right{
-
-        width:35%;
-
-    }
-
-    .popup-title{
-
-        font-size:16px;
-
-    }
-
-    .popup-name{
-
-        font-size:15px;
-
-        margin-bottom:14px;
-
-    }
-
-    .access-card{
-
-        padding:10px;
-
-        margin-bottom:14px;
-
-    }
-
-    .access-code{
-
-        font-size:18px;
-
-        letter-spacing:4px;
-
-    }
-
-    .info-row{
-
-        gap:8px;
-
-        margin-bottom:10px;
-
-    }
-
-    .info-row img{
-
-        width:16px;
-
-        height:16px;
-
-    }
-
-    .info-row span{
-
-        font-size:11px;
-
-        line-height:1.35;
-
-    }
-
-    .screenshot-note{
-
-        padding:10px;
-
-        font-size:10px;
-
-        margin-top:12px;
-
-    }
-
-    .done-btn{
-
-        margin-top:14px;
-
-        padding:10px;
-
-        font-size:13px;
-
-    }
-
-    .popup-ticket{
-
-        height:92%;
-
-    }
-
-}
-
- /* ==========================================
+/* ==========================================
    NEW ENVELOPE POPUP
 ========================================== */
 
 .invite-popup{
-
     position:relative;
-
-    width:min(900px,95vw);
-
-    max-width:900px;
-
-    min-height:500px;
+    width:min(980px,94vw);
+    height:640px;
 
     display:flex;
-
-    justify-content:flex-end;
-
     align-items:center;
+    justify-content:flex-end;
 
     margin:auto;
 
+    animation:popupIn .45s ease;
 }
 
-/* ---------------- Ticket ---------------- */
+/* ===========================
+   RIGHT TICKET
+=========================== */
 
 .ticket-panel{
 
@@ -565,13 +228,11 @@
 
     right:0;
 
-    top:12px;
+    top:18px;
 
-    bottom:12px;
+    bottom:18px;
 
-    width:34%;
-
-    z-index:1;
+    width:39%;
 
     display:flex;
 
@@ -579,7 +240,11 @@
 
     align-items:center;
 
+    z-index:1;
+
 }
+
+/* ticket image */
 
 .popup-ticket{
 
@@ -587,39 +252,43 @@
 
     height:100%;
 
-    object-fit:cover;
+    object-fit:contain;
 
-    border-radius:22px;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.25));
 
 }
 
-/* ---------------- White Card ---------------- */
+/* ===========================
+   LEFT WHITE CARD
+=========================== */
 
 .white-card{
 
     position:relative;
 
-    z-index:5;
+    width:69%;
 
-    width:72%;
+    height:100%;
 
-    min-height:500px;
+    background:white;
 
-    background:#fff;
+    border-radius:34px;
 
-    border-radius:28px;
-
-    padding:28px;
+    padding:38px;
 
     display:flex;
 
     flex-direction:column;
 
-    box-shadow:0 18px 50px rgba(0,0,0,.18);
+    z-index:5;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.10),
+        0 30px 80px rgba(0,0,0,.18);
 
 }
 
-/* Envelope Cut */
+/* top notch */
 
 .white-card::before{
 
@@ -629,17 +298,19 @@
 
     top:0;
 
-    right:-28px;
+    right:-34px;
 
-    width:56px;
+    width:68px;
 
-    height:56px;
+    height:68px;
 
     background:white;
 
     border-radius:50%;
 
 }
+
+/* bottom notch */
 
 .white-card::after{
 
@@ -649,197 +320,18 @@
 
     bottom:0;
 
-    right:-28px;
+    right:-34px;
 
-    width:56px;
+    width:68px;
 
-    height:56px;
+    height:68px;
 
     background:white;
 
     border-radius:50%;
 
 }
-
-/* ---------------- Header ---------------- */
-
-.popup-header{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-}
-
-.celebrate-icon{
-
-    width:52px;
-
-    height:52px;
-
-    border-radius:50%;
-
-    background:#FFF5E3;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:24px;
-
-}
-
-.popup-title{
-
-    font-size:32px;
-
-    font-weight:700;
-
-    color:#222;
-
-}
-
-.popup-subtitle{
-
-    color:#666;
-
-    margin-top:2px;
-
-    font-size:16px;
-
-}
-
-/* Divider */
-
-.gold-divider{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin:20px 0;
-
-}
-
-.gold-divider::before,
-.gold-divider::after{
-
-    content:"";
-
-    flex:1;
-
-    height:1px;
-
-    background:#D8A13A;
-
-}
-
-.gold-divider span{
-
-    color:#D8A13A;
-
-    font-size:16px;
-
-}
-
-/* Labels */
-
-.field-label{
-
-    color:#C28A1A;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    margin-bottom:6px;
-
-    font-weight:700;
-
-}
-
-.popup-name{
-
-    font-size:34px;
-
-    font-weight:700;
-
-    color:#222;
-
-    margin-bottom:20px;
-
-}
-
-.reservation-box{
-
-    border:1px solid #E4C177;
-
-    border-radius:14px;
-
-    padding:16px;
-
-    font-size:28px;
-
-    letter-spacing:8px;
-
-    margin-bottom:22px;
-
-}
-
-/* Reminder */
-
-.reminder-box{
-
-    margin-top:18px;
-
-    display:flex;
-
-    gap:14px;
-
-    background:#FFF8EE;
-
-    border:1px solid #F0D7A4;
-
-    border-radius:14px;
-
-    padding:14px;
-
-}
-
-.reminder-box img{
-
-    width:26px;
-
-    height:26px;
-
-}
-
-.done-btn{
-
-    margin-top:auto;
-
-    background:linear-gradient(135deg,#F4C65A,#C88A13)!important;
-
-    color:white;
-
-    border:none;
-
-    border-radius:40px;
-
-    padding:16px;
-
-    font-size:17px;
-
-    font-weight:700;
-
-}
-
+ 
 /* ================= MOBILE ================= */
 
 @media(max-width:768px){
