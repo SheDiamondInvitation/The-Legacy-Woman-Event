@@ -238,7 +238,7 @@ transition:.45s ease;
 
 display:flex;
 
-opacity:1;
+opacity:0;
 
 }
 
@@ -257,7 +257,7 @@ overflow:hidden;
 box-shadow:
 0 40px 100px rgba(0,0,0,.35);
 
-display:flex;
+display:none;
 
 flex-direction:column;
 
@@ -312,6 +312,230 @@ overflow-y:auto;
 
 }
 
+/*==================================================
+INVITATION CONTENT
+==================================================*/
+
+.inviteBody{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+padding:30px 30px 26px;
+
+background:#fff;
+
+overflow:auto;
+
+}
+
+
+.inviteStatus{
+
+font-size:17px;
+
+font-weight:600;
+
+color:#C89B3C;
+
+margin-top:4px;
+
+}
+
+
+.inviteName{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#1C1C1E;
+
+margin-top:10px;
+
+line-height:1.15;
+
+text-align:center;
+
+}
+
+
+.goldDivider{
+
+width:130px;
+
+height:2px;
+
+background:#C89B3C;
+
+margin:22px auto;
+
+border-radius:20px;
+
+}
+
+
+.codeLabel{
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+color:#6E6E73;
+
+margin-bottom:12px;
+
+}
+
+
+.accessCode{
+
+font-family:
+SFMono-Regular,
+Menlo,
+Consolas,
+monospace;
+
+font-size:34px;
+
+font-weight:700;
+
+letter-spacing:7px;
+
+background:#F6F6F7;
+
+padding:14px 24px;
+
+border-radius:18px;
+
+color:#1C1C1E;
+
+margin-bottom:28px;
+
+} 
+
+ .inviteDetails{
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-bottom:26px;
+
+}
+
+
+.detailRow{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:14px;
+
+font-size:15px;
+
+line-height:1.45;
+
+color:#1C1C1E;
+
+}
+
+
+.detailIcon{
+
+width:22px;
+
+height:22px;
+
+flex-shrink:0;
+
+margin-top:2px;
+
+}
+
+.notifyBox{
+
+width:100%;
+
+display:flex;
+
+align-items:flex-start;
+
+gap:14px;
+
+background:#FAFAFA;
+
+padding:16px;
+
+border-radius:18px;
+
+margin-bottom:28px;
+
+font-size:14px;
+
+line-height:1.5;
+
+color:#6E6E73;
+
+border-left:4px solid #C89B3C;
+
+}
+
+
+.notifyIcon{
+
+width:22px;
+
+height:22px;
+
+flex-shrink:0;
+
+margin-top:2px;
+
+}
+
+ #doneBtn{
+
+width:100%;
+
+height:54px;
+
+border:none;
+
+border-radius:18px;
+
+background:#C89B3C;
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+
+#doneBtn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 28px rgba(200,155,60,.35);
+
+}
  
 </style>
 </head>
@@ -365,7 +589,95 @@ overflow-y:auto;
 
         <!-- WHITE CONTENT -->
 
-        <div class="inviteBody">
+       <div class="inviteBody">
+
+    <div class="inviteStatus">
+
+        🎉 Congratulations
+
+    </div>
+
+    <div class="inviteName" id="inviteName">
+
+        Faith Bassey
+
+    </div>
+
+    <div class="goldDivider"></div>
+
+    <div class="codeLabel">
+
+        ACCESS CODE
+
+    </div>
+
+    <div class="accessCode" id="inviteCode">
+
+        A73HJ91
+
+    </div>
+
+    <div class="inviteDetails">
+
+        <div class="detailRow">
+
+            <img src="icon/calendar.svg" class="detailIcon">
+
+            <span id="inviteDate">
+                Saturday, 1 August 2026
+            </span>
+
+        </div>
+
+        <div class="detailRow">
+
+            <img src="icon/clock.svg" class="detailIcon">
+
+            <span id="inviteTime">
+                9:00 AM
+            </span>
+
+        </div>
+
+        <div class="detailRow location">
+
+            <img src="icon/location.svg" class="detailIcon">
+
+            <span id="inviteVenue">
+
+                McGovern Hall<br>
+
+                St Agnes Catholic Church<br>
+
+                Maryland, Ikeja
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="notifyBox">
+
+        <img src="icon/shield.svg" class="notifyIcon">
+
+        <div>
+
+            Please present this pass at check-in.<br>
+
+            Take a screenshot before leaving this page.
+
+        </div>
+
+    </div>
+
+    <button id="doneBtn">
+
+        Done
+
+    </button>
+
+</div>
 
         </div>
 
