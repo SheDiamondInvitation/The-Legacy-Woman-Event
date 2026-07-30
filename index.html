@@ -516,49 +516,81 @@ async function checkInvite(){
     heroContent.classList.add("hide");
 
     setTimeout(()=>{
+     heroBox.classList.add("show-popup");
       heroBox.innerHTML=`
-        <h3 style="color:rgba(255,255,255,0.95); font-weight:700;">
-          Congratulations ${rec.name}!
-        </h3>
+        <div class="invite-popup">
 
-        <p style="color:rgba(255,255,255,0.85);">
-          You’ve been selected to attend
-        </p>
+    <div class="popup-left">
 
-        <p style="color:rgba(255,255,255,0.95);">
-          <strong>The SheDiamond Legacy Woman Event</strong>
-        </p>
+        <div class="verify-badge">
+            <img src="icons/shield.svg" alt="">
+            VERIFIED INVITATION
+        </div>
 
-        <p style="color:rgba(255,255,255,0.85);">
-          Your ACCESS CODE:
-          <strong style="color:rgba(255,255,255,0.95);">${rec.reservation}</strong>
-        </p>
+        <div class="popup-title">
+            Congratulations!
+        </div>
 
-        <p style="color:rgba(255,255,255,0.75);">
-          <strong>Date:</strong> Thur. 23rd July, 2026 | <strong>Time:</strong> 11:30AM
-        </p>
+        <div class="popup-name">
+            ${rec.name}
+        </div>
 
-        <p style="color:rgba(255,255,255,0.75);">
-          <strong>Venue:</strong> 2nd Floor, No. 91 Obafemi Awolowo Way, Opp. Baffi Furniture, Balogun Bus-Stop, Ikeja.
-        </p>
+        <div class="access-card">
 
-        <p style="color:rgba(255,255,255,0.8); margin-top:10px;">
-          KINDLY TAKE A SCREENSHOT OF THIS INVITATION.
-        </p>
+            <div class="access-label">
+                ACCESS CODE
+            </div>
 
-        <button onclick="goBack()" style="
-          margin-top:1rem;
-          padding:12px 20px;
-          background:#d63384;
-          color:white;
-          font-weight:bold;
-          border:none;
-          border-radius:8px;
-          cursor:pointer;
-          width:100%;
-        ">
-          ← Back
+            <div class="access-code">
+                ${rec.reservation}
+            </div>
+
+        </div>
+
+        <div class="info-row">
+            <img src="icons/calendar.svg" alt="">
+            <span>
+                Saturday, 1st August, 2026
+            </span>
+        </div>
+
+        <div class="info-row">
+            <img src="icons/clock.svg" alt="">
+            <span>
+                8:30 AM – 12:00 Noon
+            </span>
+        </div>
+
+        <div class="info-row">
+            <img src="icons/location.svg" alt="">
+            <span>
+                McGovern Hall,<br>
+                St. Agnes Catholic Church,<br>
+                Maryland Bus Stop,<br>
+                Ikeja, Lagos.
+            </span>
+        </div>
+
+        <div class="screenshot-note">
+            Kindly take a screenshot of this invitation and present it at the registration desk on the event day.
+        </div>
+
+        <button class="done-btn" onclick="goBack()">
+            Done
         </button>
+
+    </div>
+
+    <div class="popup-right">
+
+        <img
+            src="ticket-preview.png"
+            class="popup-ticket"
+            alt="Ticket Preview">
+
+    </div>
+
+</div>
       `;
     },300);
 
