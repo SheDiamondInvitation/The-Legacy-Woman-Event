@@ -210,7 +210,7 @@
 
     width:min(92vw,360px);
 
-    height:530px;
+    height:500px;
 
     margin:auto;
 
@@ -232,7 +232,7 @@
 
     top:0;
 
-    right:0;
+    right:25px;
 
     width:145px;
 
@@ -254,7 +254,7 @@
 
     display:block;
 
-    object-fit:cover;
+    object-fit:contain;
 
 }
 /* ===========================
@@ -269,7 +269,7 @@
 
     top:0;
 
-    width:235px;
+    width:220px;
 
     height:100%;
 
@@ -547,23 +547,21 @@
 
 .hero-box.show-popup{
 
-    width:min(860px,94vw);
+    background:transparent !important;
 
-    aspect-ratio:860 / 560;
+    width:100%;
 
-    background:transparent;
+    height:100%;
 
-    padding:0;
+    display:flex;
 
-    border-radius:30px;
+    justify-content:center;
 
-    display:block;
+    align-items:center;
 
-    overflow:visible;
+    padding:16px;
 
-    box-shadow:none;
-
-    backdrop-filter:none;
+    box-sizing:border-box;
 
 }
 
