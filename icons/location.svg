@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none">
+
+    <defs>
+
+        <!-- Premium Gold Gradient -->
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF7C8"/>
+            <stop offset="20%" stop-color="#F6D96E"/>
+            <stop offset="45%" stop-color="#D7A62B"/>
+            <stop offset="70%" stop-color="#B77A12"/>
+            <stop offset="100%" stop-color="#FFE8A2"/>
+        </linearGradient>
+
+        <!-- Soft Gold Shadow -->
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="2"
+                flood-color="#A66D00"
+                flood-opacity="0.35"/>
+        </filter>
+
+    </defs>
+
+    <!-- Outer Ring -->
+    <circle
+        cx="32"
+        cy="32"
+        r="29"
+        stroke="url(#goldGradient)"
+        stroke-width="2.5"/>
+
+    <!-- Location Pin -->
+    <path
+        d="
+        M32 14
+        C24.8 14 19 19.8 19 27
+        C19 37.5 32 49 32 49
+        C32 49 45 37.5 45 27
+        C45 19.8 39.2 14 32 14Z"
+        fill="url(#goldGradient)"
+        filter="url(#shadow)"/>
+
+    <!-- Inner Circle -->
+    <circle
+        cx="32"
+        cy="27"
+        r="5.5"
+        fill="#FFFFFF"/>
+
+    <!-- Center Dot -->
+    <circle
+        cx="32"
+        cy="27"
+        r="2.2"
+        fill="url(#goldGradient)"/>
+
+</svg>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none">
+
+    <defs>
+
+        <!-- Premium Gold Gradient -->
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF7C8"/>
+            <stop offset="20%" stop-color="#F6D96E"/>
+            <stop offset="45%" stop-color="#D7A62B"/>
+            <stop offset="70%" stop-color="#B77A12"/>
+            <stop offset="100%" stop-color="#FFE8A2"/>
+        </linearGradient>
+
+        <!-- Gold Shadow -->
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="2"
+                flood-color="#A66D00"
+                flood-opacity="0.35"/>
+        </filter>
+
+    </defs>
+
+    <!-- Outer Ring -->
+    <circle
+        cx="32"
+        cy="32"
+        r="29"
+        stroke="url(#goldGradient)"
+        stroke-width="2.5"/>
+
+    <!-- Shield -->
+    <path
+        d="
+        M32 14
+        L45 19
+        V30
+        C45 40
+        39 47
+        32 51
+        C25 47
+        19 40
+        19 30
+        V19
+        Z"
+        fill="url(#goldGradient)"
+        filter="url(#shadow)"/>
+
+    <!-- Inner Highlight -->
+    <path
+        d="
+        M32 18
+        L41 21.5
+        V30
+        C41 37
+        37 42
+        32 45
+        C27 42
+        23 37
+        23 30
+        V21.5
+        Z"
+        fill="rgba(255,255,255,0.18)"
+        opacity=".28"/>
+
+    <!-- Check Mark -->
+    <path
+        d="
+        M26.5 31.5
+        L30.5 35.5
+        L38.5 27.5"
+        stroke="#FFFFFF"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+</svg>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none">
+
+    <defs>
+
+        <!-- Gold Metallic Gradient -->
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF7C8"/>
+            <stop offset="20%" stop-color="#F6D96E"/>
+            <stop offset="45%" stop-color="#D7A62B"/>
+            <stop offset="70%" stop-color="#B77A12"/>
+            <stop offset="100%" stop-color="#FFE8A2"/>
+        </linearGradient>
+
+        <!-- Soft Shadow -->
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="2"
+                flood-color="#A66D00"
+                flood-opacity="0.35"/>
+        </filter>
+
+    </defs>
+
+    <!-- Outer Circle -->
+    <circle
+        cx="32"
+        cy="32"
+        r="29"
+        stroke="url(#goldGradient)"
+        stroke-width="2.5"/>
+
+    <!-- Clock Face -->
+    <circle
+        cx="32"
+        cy="32"
+        r="18"
+        fill="#FFFFFF"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        filter="url(#shadow)"/>
+
+    <!-- Hour Markers -->
+    <g stroke="url(#goldGradient)" stroke-width="2.4" stroke-linecap="round">
+
+        <line x1="32" y1="11.5" x2="32" y2="15"/>
+        <line x1="32" y1="49" x2="32" y2="52.5"/>
+
+        <line x1="11.5" y1="32" x2="15" y2="32"/>
+        <line x1="49" y1="32" x2="52.5" y2="32"/>
+
+    </g>
+
+    <!-- Center Dot -->
+    <circle
+        cx="32"
+        cy="32"
+        r="2.6"
+        fill="url(#goldGradient)"/>
+
+    <!-- Hour Hand -->
+    <line
+        x1="32"
+        y1="32"
+        x2="32"
+        y2="23"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+    <!-- Minute Hand -->
+    <line
+        x1="32"
+        y1="32"
+        x2="40"
+        y2="37"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+</svg>

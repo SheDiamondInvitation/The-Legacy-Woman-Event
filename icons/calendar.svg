@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none">
+
+    <defs>
+
+        <!-- Gold Metallic Gradient -->
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF7C8"/>
+            <stop offset="20%" stop-color="#F6D96E"/>
+            <stop offset="45%" stop-color="#D7A62B"/>
+            <stop offset="70%" stop-color="#B77A12"/>
+            <stop offset="100%" stop-color="#FFE8A2"/>
+        </linearGradient>
+
+        <!-- Soft Shadow -->
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="2"
+                flood-color="#A66D00"
+                flood-opacity="0.35"/>
+        </filter>
+
+    </defs>
+
+    <!-- Outer Circle -->
+    <circle
+        cx="32"
+        cy="32"
+        r="29"
+        stroke="url(#goldGradient)"
+        stroke-width="2.5"/>
+
+    <!-- Calendar Body -->
+    <rect
+        x="17"
+        y="18"
+        width="30"
+        height="28"
+        rx="5"
+        fill="url(#goldGradient)"
+        filter="url(#shadow)"/>
+
+    <!-- Calendar Top -->
+    <rect
+        x="17"
+        y="18"
+        width="30"
+        height="8"
+        rx="5"
+        fill="#C8870C"/>
+
+    <!-- Rings -->
+    <rect
+        x="22"
+        y="12"
+        width="3"
+        height="9"
+        rx="1.5"
+        fill="url(#goldGradient)"/>
+
+    <rect
+        x="39"
+        y="12"
+        width="3"
+        height="9"
+        rx="1.5"
+        fill="url(#goldGradient)"/>
+
+    <!-- White Grid -->
+    <g fill="#FFFFFF">
+
+        <rect x="22" y="30" width="4" height="4" rx="1"/>
+        <rect x="30" y="30" width="4" height="4" rx="1"/>
+        <rect x="38" y="30" width="4" height="4" rx="1"/>
+
+        <rect x="22" y="37" width="4" height="4" rx="1"/>
+        <rect x="30" y="37" width="4" height="4" rx="1"/>
+        <rect x="38" y="37" width="4" height="4" rx="1"/>
+
+    </g>
+
+</svg>
