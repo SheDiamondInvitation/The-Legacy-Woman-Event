@@ -228,13 +228,15 @@
 
     right:18px;
 
-    top:18px;
+    top:8px;
 
-    bottom:18px;
+    bottom:8px;
 
-    width:36%;
+    width:43%;
 
     display:flex;
+ 
+    transform:translateY(-6px);
 
     justify-content:flex-end;
 
@@ -266,7 +268,7 @@
 
     position:relative;
 
-    width:69%;
+    width:61%;
 
     height:100%;
 
@@ -276,7 +278,7 @@
 
     padding:38px;
 
-    margin-right:140px;
+    margin-right:180px;
 
     display:flex;
 
@@ -290,47 +292,35 @@
 
 }
 
-/* top notch */
-
-.white-card::before{
-
-    content:"";
+.ticket-cut{
 
     position:absolute;
 
-    top:0;
+    right:-22px;
 
-    right:-34px;
+    width:44px;
 
-    width:68px;
+    height:44px;
 
-    height:68px;
-
-    background:white;
+    background:transparent;
 
     border-radius:50%;
+
+    box-shadow:22px 0 0 #ffffff;
+
+    z-index:20;
 
 }
 
-/* bottom notch */
+.ticket-cut.top{
 
-.white-card::after{
+    top:22px;
 
-    content:"";
+}
 
-    position:absolute;
+.ticket-cut.bottom{
 
-    bottom:0;
-
-    right:-34px;
-
-    width:68px;
-
-    height:68px;
-
-    background:white;
-
-    border-radius:50%;
+    bottom:22px;
 
 }
  
@@ -519,8 +509,8 @@
 ===================================== */
 
 .white-card .done-btn{
-
-    width:100%;
+    width:58%;
+    align-self:center;
 
     margin-top:auto !important;
 
@@ -753,14 +743,16 @@ async function checkInvite(){
         <div class="invite-popup">
 
     <div class="ticket-panel">
-
-        <img src="ticket-preview.png"
-             class="popup-ticket"
-             alt="Ticket">
-
+        <img
+            src="ticket-preview.png"
+            class="popup-ticket"
+            alt="Invitation Ticket">
     </div>
 
     <div class="white-card">
+
+        <div class="ticket-cut top"></div>
+        <div class="ticket-cut bottom"></div>
 
         <!-- Header -->
 
