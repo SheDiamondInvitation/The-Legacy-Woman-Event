@@ -816,140 +816,150 @@ async function checkInvite(){
 
     heroContent.classList.add("hide");
 
-    setTimeout(()=>{
-     heroBox.classList.add("show-popup");
-      heroBox.innerHTML=`
+    setTimeout(() => {
+
+    // Preload ticket image
+    const ticket = new Image();
+
+    ticket.onload = () => {
+
+        heroBox.classList.add("show-popup");
+
+        heroBox.innerHTML = `
         <div class="invite-popup">
 
-    <div class="ticket-panel">
-        <img
-            src="ticket-preview.png"
-            class="popup-ticket"
-            alt="Invitation Ticket">
-    </div>
+            <div class="ticket-panel">
+                <img
+                    src="ticket-preview.png"
+                    class="popup-ticket"
+                    alt="Invitation Ticket">
+            </div>
 
-    <div class="white-card">
+            <div class="white-card">
 
-        <div class="ticket-cut top"></div>
-        <div class="ticket-cut bottom"></div>
+                <div class="ticket-cut top"></div>
+                <div class="ticket-cut bottom"></div>
 
-        <!-- Header -->
+                <!-- Header -->
 
-        <div class="popup-header">
+                <div class="popup-header">
 
-            <div class="celebrate-icon">🎉</div>
+                    <div class="celebrate-icon">🎉</div>
 
-            <div>
+                    <div>
 
-                <div class="popup-title">
-                    Congratulations!
+                        <div class="popup-title">
+                            Congratulations!
+                        </div>
+
+                        <div class="popup-subtitle">
+                            Your seat is reserved.
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="popup-subtitle">
-                    Your seat is reserved.
+                <!-- Gold Divider -->
+
+                <div class="gold-divider">
+
+                    <span>◇</span>
+
                 </div>
 
-            </div>
+                <!-- Name -->
 
-        </div>
+                <div class="field-label">
 
-        <!-- Gold Divider -->
+                    NAME
 
-        <div class="gold-divider">
+                </div>
 
-            <span>◇</span>
+                <div class="popup-name">
 
-        </div>
+                    ${rec.name}
 
-        <!-- Name -->
+                </div>
 
-        <div class="field-label">
+                <!-- Reservation -->
 
-            NAME
+                <div class="field-label">
 
-        </div>
+                    RESERVATION CODE
 
-        <div class="popup-name">
+                </div>
 
-            ${rec.name}
+                <div class="reservation-box">
 
-        </div>
+                    ${rec.reservation}
 
-        <!-- Reservation -->
+                </div>
 
-        <div class="field-label">
+                <!-- Details -->
 
-            RESERVATION CODE
+                <div class="details-section">
 
-        </div>
+                    <div class="info-row">
 
-        <div class="reservation-box">
+                        <img src="icons/calendar.svg">
 
-            ${rec.reservation}
+                        <span>Saturday, 1st August 2026</span>
 
-        </div>
+                    </div>
 
-        <!-- Details -->
+                    <div class="info-row">
 
-        <div class="details-section">
+                        <img src="icons/clock.svg">
 
-            <div class="info-row">
+                        <span>8:30 AM – 12:00 Noon</span>
 
-                <img src="icons/calendar.svg">
+                    </div>
 
-                <span>Saturday, 1st August 2026</span>
+                    <div class="info-row">
 
-            </div>
+                        <img src="icons/location.svg">
 
-            <div class="info-row">
+                        <span>McGovern Hall, St. Agnes Catholic Church,<br>
+                        Maryland Bus Stop, Ikeja, Lagos.</span>
 
-                <img src="icons/clock.svg">
+                    </div>
 
-                <span>8:30 AM – 12:00 Noon</span>
+                </div>
 
-            </div>
+                <!-- Reminder -->
 
-            <div class="info-row">
+                <div class="reminder-box">
 
-                <img src="icons/location.svg">
+                    <img src="icons/shield.svg">
 
-                 <span>McGovern Hall, St. Agnes Catholic Church,<br>
+                    <div>
 
-                    Maryland Bus Stop, Ikeja, Lagos.</span>
+                        <strong>Please screenshot this invitation.</strong><br>
 
-            </div>
+                        Show this pass at the registration desk.
 
-        </div>
+                    </div>
 
-        <!-- Reminder -->
+                </div>
 
-        <div class="reminder-box">
+                <button class="done-btn" onclick="goBack()">
 
-            <img src="icons/shield.svg">
+                    Done
 
-            <div>
-
-                <strong>Please screenshot this invitation.</strong><br>
-
-                Show this pass at the registration desk.
+                </button>
 
             </div>
 
         </div>
+        `;
 
-        <button class="done-btn"
+    };
 
-                onclick="goBack()">
+    // Start loading the image
+    ticket.src = "ticket-preview.png";
 
-            Done
-
-        </button>
-
-    </div>
-
-</div>
-      `;
-    },300);
+}, 300);
 
   } else {
    heroContent.classList.add("hide");
