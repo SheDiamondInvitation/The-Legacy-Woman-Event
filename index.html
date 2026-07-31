@@ -200,342 +200,365 @@
     pointer-events: none;
   }
 
- /*==================================================
-INVITATION POPUP
-==================================================*/
+/* ==========================================
+   NEW ENVELOPE POPUP
+========================================== */
 
-#inviteOverlay{
+.invite-popup{
 
-position:fixed;
+    position:relative;
 
-top:0;
-left:0;
+    width:min(92vw,360px);
+    height:500px;
 
-width:100%;
-height:100%;
+    margin:auto;
 
-display:none;
+    overflow:hidden;
 
-justify-content:center;
+    border-radius:30px;
 
-align-items:flex-start;
+    animation:popupIn .45s ease;
+}
 
-padding-top:5vh;
+/* ===========================
+   RIGHT TICKET
+=========================== */
 
-background:rgba(0,0,0,.45);
+.ticket-panel{
 
-backdrop-filter:blur(14px);
+    position:absolute;
 
-z-index:9999;
+    top:0;
+    right:-20px;
 
-opacity:0;
+    width:145px;
+    height:100%;
 
-transition:.45s ease;
+    z-index:10;
+
+    pointer-events:none;
 
 }
 
-#inviteOverlay.show{
+/* ticket image */
 
-display:flex;
+.popup-ticket{
 
-opacity:1;
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+}
+/* ===========================
+   LEFT WHITE CARD
+=========================== */
+
+.white-card{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:220px;
+    height:100%;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:26px;
+
+    box-sizing:border-box;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:2;
+ 
+}
+ 
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .invite-popup{
+
+        width:95vw;
+
+        min-height:390px;
+
+    }
+
+    .white-card{
+
+        width:74%;
+
+        min-height:390px;
+
+        padding:16px;
+
+    }
+
+    .ticket-panel{
+
+        width:32%;
+
+    }
+
+    .popup-title{
+
+        font-size:18px;
+
+    }
+
+    .popup-subtitle{
+
+        font-size:12px;
+
+    }
+
+    .popup-name{
+
+        font-size:18px;
+
+        margin-bottom:10px;
+
+    }
+
+    .reservation-box{
+
+        padding:10px;
+
+        font-size:15px;
+
+        letter-spacing:3px;
+
+        margin-bottom:12px;
+
+    }
+
+    .field-label{
+
+        font-size:10px;
+
+    }
+
+    .gold-divider{
+
+        margin:12px 0;
+
+    }
+
+    .info-row{
+
+        margin-bottom:8px;
+
+    }
+
+    .info-row img{
+
+        width:15px;
+
+        height:15px;
+
+    }
+
+    .info-row span{
+
+        font-size:10px;
+
+        line-height:1.3;
+
+    }
+
+    .reminder-box{
+
+        padding:10px;
+
+        font-size:10px;
+
+        gap:8px;
+
+    }
+
+    .reminder-box img{
+
+        width:18px;
+
+        height:18px;
+
+    }
+
+    .done-btn{
+
+        padding:10px;
+
+        font-size:13px;
+
+    }
 
 }
 
-.inviteCard{
+ /* =====================================
+   DETAILS SECTION
+===================================== */
 
-width:min(440px,92vw);
+.details-section{
 
-height:min(82vh,700px);
+    border-top:1px solid #EFEFEF;
 
-background:#fff;
+    border-bottom:1px solid #EFEFEF;
 
-border-radius:34px;
+    padding:14px 0;
 
-overflow:hidden;
+    margin-top:10px;
 
-box-shadow:
-0 40px 100px rgba(0,0,0,.35);
-
-display:flex;
-
-flex-direction:column;
-
-transform:
-translateY(20px)
-scale(.88);
-
-transition:
-all .45s cubic-bezier(.22,1,.36,1);
+    margin-bottom:10px;
 
 }
 
-#inviteOverlay.show .inviteCard{
+.info-row{
 
-transform:
-translateY(0)
-scale(1);
+    display:flex;
 
-}
+    align-items:flex-start;
 
- .inviteHeader{
+    gap:10px;
 
-height:190px;
-
-flex-shrink:0;
-
-overflow:hidden;
-
-background:#000;
+    margin-bottom:12px;
 
 }
 
-.inviteBanner{
+.info-row:last-child{
 
-width:100%;
-
-height:100%;
-
-display:block;
-
-object-fit:cover;
+    margin-bottom:0;
 
 }
 
- .inviteBody{
+.info-row img{
 
-height:66%;
+    width:18px;
 
-background:#fff;
+    height:18px;
 
-padding:28px;
+    flex-shrink:0;
 
-overflow-y:auto;
-
-}
-
-/*==================================================
-INVITATION CONTENT
-==================================================*/
-
-.inviteBody{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-padding:22px 24px 20px;
-
-background:#fff;
-
-overflow:auto;
+    margin-top:2px;
 
 }
 
+.info-row span{
 
-.inviteStatus{
+    color:#555;
 
-font-size:17px;
+    font-size:13px;
 
-font-weight:600;
-
-color:#C89B3C;
-
-margin-top:4px;
+    line-height:1.45;
 
 }
 
+/* =====================================
+   BUTTON OVERRIDE
+===================================== */
 
-.inviteName{
+.white-card .done-btn{
+    width:58%;
+    align-self:center;
 
-font-size:28px;
+    margin-top:auto !important;
 
-font-weight:700;
+    background:linear-gradient(
+        135deg,
+        #F9D978,
+        #D8A13A,
+        #B97C13
+    ) !important;
 
-color:#1C1C1E;
+    color:#fff !important;
 
-margin-top:10px;
+    border:none !important;
 
-line-height:1.15;
+    padding:14px 18px;
 
-text-align:center;
+    border-radius:40px;
 
-}
+    font-size:15px;
 
+    font-weight:700;
 
-.goldDivider{
+    cursor:pointer;
 
-width:130px;
-
-height:2px;
-
-background:#C89B3C;
-
-margin:22px auto;
-
-border-radius:20px;
-
-}
-
-
-.codeLabel{
-
-font-size:12px;
-
-font-weight:700;
-
-letter-spacing:3px;
-
-color:#6E6E73;
-
-margin-bottom:12px;
+    box-shadow:0 10px 25px rgba(184,124,19,.25);
 
 }
 
+.white-card .done-btn:hover{
 
-.accessCode{
-
-font-family:
-SFMono-Regular,
-Menlo,
-Consolas,
-monospace;
-
-font-size:28px;
-
-font-weight:700;
-
-letter-spacing:5px;
-
-background:#F6F6F7;
-
-padding:12px 20px;
-
-border-radius:18px;
-
-color:#1C1C1E;
-
-margin-bottom:18px;
-
-} 
-
- .inviteDetails{
-
-width:100%;
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
-margin-bottom:26px;
+    transform:translateY(-2px);
 
 }
 
+/* =====================================
+   HERO OVERRIDE
+===================================== */
 
-.detailRow{
+.hero-box.show-popup{
 
-display:flex;
+    width:100%;
+    height:100%;
 
-align-items:flex-start;
+    display:flex;
 
-gap:14px;
+    justify-content:center;
+    align-items:center;
 
-font-size:15px;
+    padding:16px;
 
-line-height:1.45;
+    box-sizing:border-box;
 
-color:#1C1C1E;
-
-}
-
-
-.detailIcon{
-
-width:22px;
-
-height:22px;
-
-flex-shrink:0;
-
-margin-top:2px;
+    background:transparent;
 
 }
 
-.notifyBox{
+/* =====================================
+   MOBILE
+===================================== */
 
-width:100%;
+@media(max-width:768px){
 
-display:flex;
+    .details-section{
 
-align-items:flex-start;
+        padding:8px 0;
 
-gap:14px;
+    }
 
-background:#FAFAFA;
+    .info-row{
 
-padding:12px;
+        gap:6px;
 
-border-radius:18px;
+        margin-bottom:8px;
 
-margin-bottom:28px;
+    }
 
-font-size:13px;
+    .info-row img{
 
-line-height:1.5;
+        width:14px;
 
-color:#6E6E73;
+        height:14px;
 
-border-left:4px solid #C89B3C;
+    }
 
-}
+    .info-row span{
 
+        font-size:10px;
 
-.notifyIcon{
+        line-height:1.25;
 
-width:22px;
-
-height:22px;
-
-flex-shrink:0;
-
-margin-top:2px;
-
-}
-
- #doneBtn{
-
-width:50%;
-
-height:650px;
-
-border:none;
-
-border-radius:18px;
-
-background:#C89B3C;
-
-color:#fff;
-
-font-size:17px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.25s;
-
-}
-
-
-#doneBtn:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 12px 28px rgba(200,155,60,.35);
+    }
 
 }
  
@@ -569,123 +592,6 @@ box-shadow:0 12px 28px rgba(200,155,60,.35);
 
 </div>
 
- <!-- ==========================================
-     INVITATION POPUP
-=========================================== -->
-
-<div id="inviteOverlay">
-
-    <div class="inviteCard">
-
-        <!-- TOP IMAGE -->
-
-        <div class="inviteHeader">
-
-            <img
-                src="ticket-banner.png"
-                class="inviteBanner"
-                alt="Ticket Banner">
-
-        </div>
-
-
-        <!-- WHITE CONTENT -->
-
-       <div class="inviteBody">
-
-    <div class="inviteStatus">
-
-        🎉 Congratulations
-
-    </div>
-
-    <div class="inviteName" id="inviteName">
-
-        Faith Bassey
-
-    </div>
-
-    <div class="goldDivider"></div>
-
-    <div class="codeLabel">
-
-        ACCESS CODE
-
-    </div>
-
-    <div class="accessCode" id="inviteCode">
-
-        A73HJ91
-
-    </div>
-
-    <div class="inviteDetails">
-
-        <div class="detailRow">
-
-            <img src="icon/calendar.svg" class="detailIcon">
-
-            <span id="inviteDate">
-                Saturday, 1 August 2026
-            </span>
-
-        </div>
-
-        <div class="detailRow">
-
-            <img src="icon/clock.svg" class="detailIcon">
-
-            <span id="inviteTime">
-                9:00 AM
-            </span>
-
-        </div>
-
-        <div class="detailRow location">
-
-            <img src="icon/location.svg" class="detailIcon">
-
-            <span id="inviteVenue">
-
-                McGovern Hall<br>
-
-                St Agnes Catholic Church<br>
-
-                Maryland, Ikeja
-
-            </span>
-
-        </div>
-
-    </div>
-
-    <div class="notifyBox">
-
-        <img src="icon/shield.svg" class="notifyIcon">
-
-        <div>
-
-            Please present this pass at check-in.<br>
-
-            Take a screenshot before leaving this page.
-
-        </div>
-
-    </div>
-
-    <button id="doneBtn">
-
-        Done
-
-    </button>
-
-</div>
-
-        </div>
-
-    </div>
-
-</div>
 <script>
 setTimeout(()=>{
   document.getElementById('openingLogo').style.display='none';
@@ -779,49 +685,145 @@ async function checkInvite(){
     heroContent.classList.add("hide");
 
     setTimeout(()=>{
+     heroBox.classList.add("show-popup");
       heroBox.innerHTML=`
-        <h3 style="color:rgba(255,255,255,0.95); font-weight:700;">
-          Congratulations ${rec.name}!
-        </h3>
+        <div class="invite-popup">
 
-        <p style="color:rgba(255,255,255,0.85);">
-          You’ve been selected to attend
-        </p>
+    <div class="ticket-panel">
+        <img
+            src="ticket-preview.png"
+            class="popup-ticket"
+            alt="Invitation Ticket">
+    </div>
 
-        <p style="color:rgba(255,255,255,0.95);">
-          <strong>The SheDiamond Legacy Woman Event</strong>
-        </p>
+    <div class="white-card">
 
-        <p style="color:rgba(255,255,255,0.85);">
-          Your ACCESS CODE:
-          <strong style="color:rgba(255,255,255,0.95);">${rec.reservation}</strong>
-        </p>
+        <div class="ticket-cut top"></div>
+        <div class="ticket-cut bottom"></div>
 
-        <p style="color:rgba(255,255,255,0.75);">
-          <strong>Date:</strong> Thur. 23rd July, 2026 | <strong>Time:</strong> 11:30AM
-        </p>
+        <!-- Header -->
 
-        <p style="color:rgba(255,255,255,0.75);">
-          <strong>Venue:</strong> 2nd Floor, No. 91 Obafemi Awolowo Way, Opp. Baffi Furniture, Balogun Bus-Stop, Ikeja.
-        </p>
+        <div class="popup-header">
 
-        <p style="color:rgba(255,255,255,0.8); margin-top:10px;">
-          KINDLY TAKE A SCREENSHOT OF THIS INVITATION.
-        </p>
+            <div class="celebrate-icon">🎉</div>
 
-        <button onclick="goBack()" style="
-          margin-top:1rem;
-          padding:12px 20px;
-          background:#d63384;
-          color:white;
-          font-weight:bold;
-          border:none;
-          border-radius:8px;
-          cursor:pointer;
-          width:100%;
-        ">
-          ← Back
+            <div>
+
+                <div class="popup-title">
+                    Congratulations!
+                </div>
+
+                <div class="popup-subtitle">
+                    Your seat is reserved.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Gold Divider -->
+
+        <div class="gold-divider">
+
+            <span>◇</span>
+
+        </div>
+
+        <!-- Name -->
+
+        <div class="field-label">
+
+            NAME
+
+        </div>
+
+        <div class="popup-name">
+
+            ${rec.name}
+
+        </div>
+
+        <!-- Reservation -->
+
+        <div class="field-label">
+
+            RESERVATION CODE
+
+        </div>
+
+        <div class="reservation-box">
+
+            ${rec.reservation}
+
+        </div>
+
+        <!-- Details -->
+
+        <div class="details-section">
+
+            <div class="info-row">
+
+                <img src="icons/calendar.svg">
+
+                <span>Saturday, 1st August 2026</span>
+
+            </div>
+
+            <div class="info-row">
+
+                <img src="icons/clock.svg">
+
+                <span>8:30 AM – 12:00 Noon</span>
+
+            </div>
+
+            <div class="info-row">
+
+                <img src="icons/location.svg">
+
+                <span>
+
+                    McGovern Hall,<br>
+
+                    St. Agnes Catholic Church,<br>
+
+                    Maryland Bus Stop,<br>
+
+                    Ikeja, Lagos.
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Reminder -->
+
+        <div class="reminder-box">
+
+            <img src="icons/shield.svg">
+
+            <div>
+
+                <strong>Please screenshot this invitation.</strong><br>
+
+                Show this pass at the registration desk.
+
+            </div>
+
+        </div>
+
+        <button class="done-btn"
+
+                onclick="goBack()">
+
+            Done
+
         </button>
+
+    </div>
+
+</div>
       `;
     },300);
 
@@ -904,8 +906,6 @@ function rebuildCountdown(){
     spans[unit] = elements[i];
   });
 }
- // TEMPORARY TEST ONLY
-document.getElementById("inviteOverlay").classList.add("show");
 </script>
 
 </body>
