@@ -952,30 +952,72 @@ async function checkInvite(){
     },300);
 
   } else {
-    heroContent.classList.add("hide");
+   heroContent.classList.add("hide");
 
-    setTimeout(()=>{
-      heroBox.innerHTML=`
-        <h3 style="color:white;">😔 Invitation Not Found</h3>
-        <p style="color:rgba(255,255,255,0.8);">Please contact your group admin.</p>
+setTimeout(() => {
 
-        <button onclick="goBack()" style="
-          margin-top:1rem;
-          padding:12px 20px;
-          background:#d63384;
-          color:white;
-          font-weight:bold;
-          border:none;
-          border-radius:8px;
-          cursor:pointer;
-          width:100%;
-        ">
-          ← Back
+  heroBox.classList.add("show-popup");
+
+  heroBox.innerHTML = `
+    <div class="invite-popup">
+
+      <div class="ticket-panel">
+        <img
+          src="ticket-preview.png"
+          class="popup-ticket"
+          alt="Invitation Ticket">
+      </div>
+
+      <div class="white-card">
+
+        <div class="popup-header">
+
+          <div class="celebrate-icon">😔</div>
+
+          <div>
+            <div class="popup-title">
+              Invitation Not Found
+            </div>
+
+            <div class="popup-subtitle">
+              We couldn't find your invitation.
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="gold-divider">
+          <span>◇</span>
+        </div>
+
+        <div class="field-label">
+          STATUS
+        </div>
+
+        <div class="popup-name" style="font-size:18px;">
+          No Reservation Found
+        </div>
+
+        <div class="reminder-box">
+          <img src="icons/shield.svg" alt="Info">
+
+          <div>
+            <strong>Please contact your group admin.</strong><br>
+            If you believe this is an error, confirm that you entered the correct 11-digit phone number.
+          </div>
+        </div>
+
+        <button class="done-btn" onclick="goBack()">
+          Back
         </button>
-      `;
-    },300);
-  }
-}
+
+      </div>
+
+    </div>
+  `;
+
+}, 300);
 
 // ✅ BACK FUNCTION (OUTSIDE)
 function goBack(){
