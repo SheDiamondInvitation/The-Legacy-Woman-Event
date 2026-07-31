@@ -844,7 +844,8 @@ async function checkInvite(){
     return;
   }
 
-  loader.style.display="block";
+  document.getElementById("heroContent").style.display="none";
+loader.style.display="flex";
 
   const data=await fetch("list.json?"+Date.now())
   .then(r=>r.json())
@@ -859,7 +860,10 @@ async function checkInvite(){
   if(data && data[phone]){
     const rec=data[phone];
 
-    heroContent.classList.add("hide");
+    document.getElementById("phoneInput").style.display = "none";
+heroContent.querySelector("button").style.display = "none";
+
+loader.style.display = "flex";
 
     setTimeout(() => {
 
@@ -867,7 +871,8 @@ async function checkInvite(){
     const ticket = new Image();
 
     ticket.onload = () => {
-
+        
+        loader.style.display = "none";
         heroBox.classList.add("show-popup");
 
         heroBox.innerHTML = `
@@ -1004,13 +1009,16 @@ async function checkInvite(){
     // Start loading the image
     ticket.src = "ticket-preview.png";
 
-}, 300);
+}, 2000);
 
   } else {
-   heroContent.classList.add("hide");
+   document.getElementById("phoneInput").style.display = "none";
+   heroContent.querySelector("button").style.display = "none";
+
+loader.style.display = "flex";
 
 setTimeout(() => {
-
+  loader.style.display = "none";
   heroBox.classList.add("show-popup");
 
   heroBox.innerHTML = `
@@ -1072,7 +1080,7 @@ setTimeout(() => {
     </div>
   `;
 
-}, 300);
+}, 2000);
   }
 }
 // ✅ BACK FUNCTION (OUTSIDE)
@@ -1092,8 +1100,15 @@ function goBack(){
 
       <input type="tel" id="phoneInput" placeholder="Enter Phone Number" />
       <button onclick="checkInvite()">Check</button>
-      <div class="loader" id="loader"></div>
+     <div class="loader-container" id="loader">
+
+    <div class="loader"></div>
+
+    <div class="loader-text">
+        Checking Details
     </div>
+
+</div>
 
     <div id="twinkles"></div>
   `;
