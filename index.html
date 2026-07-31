@@ -979,9 +979,13 @@ async function checkInvite(){
 
 // ✅ BACK FUNCTION (OUTSIDE)
 function goBack(){
-  const heroBox=document.getElementById("heroBox");
 
-  heroBox.innerHTML=`
+  const heroBox = document.getElementById("heroBox");
+
+  // Restore hero to its original state
+  heroBox.classList.remove("show-popup");
+
+  heroBox.innerHTML = `
     <div id="heroContent">
       <h2>SheDiamond Legacy Woman Invitation Checker</h2>
 
@@ -992,11 +996,27 @@ function goBack(){
       <button onclick="checkInvite()">Check</button>
       <div class="loader" id="loader"></div>
     </div>
+
+    <div id="twinkles"></div>
   `;
 
   rebuildCountdown();
   reconnectCountdown();
   updateCountdown();
+
+  // Rebuild twinkles
+  const twinkleContainer = document.getElementById("twinkles");
+
+  for(let i = 0; i < 30; i++){
+      const t = document.createElement("div");
+      t.className = "twinkle";
+      t.style.left = Math.random() * 100 + "%";
+      t.style.top = Math.random() * 100 + "%";
+      twinkleContainer.appendChild(t);
+  }
+
+  // Make sure hero is visible
+  heroBox.classList.add("active");
 }
 
 // ✅ REBUILD COUNTDOWN
