@@ -345,7 +345,7 @@
 }
 
 .popup-name{
-    font-size:20px;
+    font-size:17px;
     font-weight:700;
     color:#222;
     margin-bottom:8px;
@@ -830,18 +830,12 @@ async function checkInvite(){
   if(data && data[phone]){
     const rec=data[phone];
 
-    heroContent.classList.add("hide");
+heroContent.classList.add("hide");
 
-    setTimeout(() => {
+heroBox.classList.add("show-popup");
 
-    // Preload ticket image
-    const ticket = new Image();
+heroBox.innerHTML = `
 
-    ticket.onload = () => {
-
-        heroBox.classList.add("show-popup");
-
-        heroBox.innerHTML = `
         <div class="invite-popup">
 
             <div class="ticket-panel">
@@ -972,11 +966,6 @@ async function checkInvite(){
 
     };
 
-    // Start loading the image
-    ticket.src = "ticket-preview.png";
-
-}, 300);
-
   } else {
    heroContent.classList.add("hide");
 
@@ -1042,8 +1031,6 @@ setTimeout(() => {
 
     </div>
   `;
-
-}, 300);
   }
 }
 // ✅ BACK FUNCTION (OUTSIDE)
